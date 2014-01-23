@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_topbar">
+        <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bt_back"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/small_margin_size"
+                android:onClick="back"/>
+        <Button android:id="@+id/book_manager_btAddNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bt_add_new"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/small_margin_size"
+                android:onClick="addNewBook"/>
+    </RelativeLayout>
+    <ImageView android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@drawable/line_blue"
+               android:contentDescription="@string/app_name"/>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <Button android:id="@+id/btBookManager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BOOK"
+                android:background="@drawable/bg_button_select_group2item"/>
+        <Button android:id="@+id/btAlarmManager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ALARM"
+                android:layout_toRightOf="@id/btBookManager"
+                android:background="@drawable/bg_button_unselect_group2item"/>
+    </RelativeLayout>
+    <FrameLayout
+            android:id="@+id/fContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/White"/>
+</LinearLayout>

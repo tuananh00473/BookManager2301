@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_topbar">
+        <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bt_back"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/small_margin_size"
+                android:onClick="cancelOrBack"/>
+    </RelativeLayout>
+    <ImageView android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@drawable/line_blue"
+               android:contentDescription="@string/app_name"/>
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent">
+            <GridLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnCount="2"
+                        android:rowCount="5"
+                        android:layout_margin="@dimen/small_margin_size">
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="NAME"/>
+                <EditText android:id="@+id/new_book_etBookName"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:inputType="text"/>
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="AUTHOR"/>
+                <EditText android:id="@+id/new_book_etAuthorName"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:inputType="text"/>
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="PUBLISHER"/>
+                <EditText android:id="@+id/new_book_etPublisher"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:inputType="text"/>
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="TYPE"/>
+                <EditText android:id="@+id/new_book_etType"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:inputType="text"/>
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="COST"/>
+                <EditText android:id="@+id/new_book_etCost"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:inputType="text"/>
+            </GridLayout>
+            <ImageView android:id="@+id/new_book_ivAvatar"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:background="@drawable/book_avatar_detail"
+                       android:layout_gravity="center_horizontal"
+                       android:contentDescription="@string/app_name"
+                       android:onClick="editBookAvatar"/>
+            <RelativeLayout android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/small_margin_size">
+                <Button android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_button_unselect_group2item"
+                        android:text="SAVE"
+                        android:onClick="saveBook"/>
+                <Button android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/bg_button_unselect_group2item"
+                        android:text="CANCEL"
+                        android:onClick="cancelOrBack"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

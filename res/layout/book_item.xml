@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <ImageView android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/book_avatar_default"
+               android:contentDescription="@string/app_name"/>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+        <TextView android:id="@+id/book_item_tvBookName"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="BOOK:"/>
+        <TextView android:id="@+id/book_item_tvAuthorName"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="AUTHOR:"
+                  android:layout_below="@id/book_item_tvBookName"/>
+    </RelativeLayout>
+</LinearLayout>
