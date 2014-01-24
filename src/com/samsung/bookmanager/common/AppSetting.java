@@ -14,9 +14,13 @@ public class AppSetting
     public static final int DATABASE_VERSION = 1;
 
 
-    public static final String TABLE_NAME = "books";
-    public static final String URL = "content://" + AppSetting.PROVIDER_NAME + "/" + TABLE_NAME;
-    public static final Uri CONTENT_URI = Uri.parse(URL);
+    public static final String TABLE_BOOK = "books";
+    public static final String URL_BOOK = "content://" + AppSetting.PROVIDER_NAME + "/" + TABLE_BOOK;
+    public static final Uri CONTENT_URI_BOOK = Uri.parse(URL_BOOK);
+
+    public static final String TABLE_REMINDER = "reminders";
+    public static final String URL_REMINDER = "content://" + AppSetting.PROVIDER_NAME + "/" + TABLE_REMINDER;
+    public static final Uri CONTENT_URI_REMINDER = Uri.parse(URL_REMINDER);
 
 
     public static final int PICK_FROM_CAMERA = 999;

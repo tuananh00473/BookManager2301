@@ -54,7 +54,7 @@ public class BookManagerFragment extends Fragment
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int index, long bookId)
             {
-                MenuDialogFragment menuDialogFragment = new MenuDialogFragment(bookService.findById((int) bookId));
+                MenuDialogFragment menuDialogFragment = new MenuDialogFragment(BookManagerFragment.this, bookService.findById((int) bookId));
                 menuDialogFragment.setRetainInstance(true);
                 menuDialogFragment.show(getActivity().getFragmentManager(), "MenuDialogFragment");
                 return true;

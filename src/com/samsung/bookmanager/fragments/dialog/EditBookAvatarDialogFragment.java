@@ -2,17 +2,12 @@ package com.samsung.bookmanager.fragments.dialog;
 
 import android.app.DialogFragment;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.view.*;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import com.samsung.bookmanager.R;
 import com.samsung.bookmanager.common.AppSetting;
-
-import java.io.File;
 
 /**
  * User: Admin
@@ -63,14 +58,8 @@ public class EditBookAvatarDialogFragment extends DialogFragment
 
     private void takeImage()
     {
-//        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-//        getActivity().startActivityForResult(cameraIntent, AppSetting.PICK_FROM_CAMERA);
-        String path = Environment.DIRECTORY_DCIM + "/img" + String.valueOf(System.currentTimeMillis()) + ".jpg";
-        File file = new File(path);
-        Uri outputFileUri = Uri.fromFile(file);
-        Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, outputFileUri);
-        startActivityForResult(intent, AppSetting.PICK_FROM_CAMERA);
+        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        getActivity().startActivityForResult(cameraIntent, AppSetting.PICK_FROM_CAMERA);
     }
 
     private void chooseImage()

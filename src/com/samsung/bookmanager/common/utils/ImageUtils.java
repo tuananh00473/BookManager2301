@@ -13,6 +13,11 @@ import java.util.Map;
  */
 public class ImageUtils
 {
+    public static Bitmap getBitmap(String path)
+    {
+        return BitmapFactory.decodeFile(path);
+    }
+
     public static Bitmap getResizeBitmap(Bitmap bm, int newWidth, int newHeight)
     {
         int width = bm.getWidth();

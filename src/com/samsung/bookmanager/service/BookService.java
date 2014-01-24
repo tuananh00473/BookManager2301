@@ -26,7 +26,7 @@ public class BookService
     {
         String where = "_id=?";
         String[] selectionArgs = new String[]{String.valueOf(bookId)};
-        Cursor c = context.getContentResolver().query(AppSetting.CONTENT_URI, null, where, selectionArgs, Book.BOOK_NAME);
+        Cursor c = context.getContentResolver().query(AppSetting.CONTENT_URI_BOOK, null, where, selectionArgs, Book.BOOK_NAME);
         if (c.moveToFirst())
         {
             return Book.getBook(c);
@@ -37,7 +37,7 @@ public class BookService
     public List<Book> getAll()
     {
         List<Book> books = new ArrayList<Book>();
-        Cursor c = context.getContentResolver().query(AppSetting.CONTENT_URI, null, null, null, Book.BOOK_NAME);
+        Cursor c = context.getContentResolver().query(AppSetting.CONTENT_URI_BOOK, null, null, null, Book.BOOK_NAME);
         if (null != c && c.moveToFirst())
         {
             do
@@ -50,30 +50,30 @@ public class BookService
 
     public void insert(Book book)
     {
-        context.getContentResolver().insert(AppSetting.CONTENT_URI, book.getContentValues());
+        context.getContentResolver().insert(AppSetting.CONTENT_URI_BOOK, book.getContentValues());
     }
 
     public void update(Book book)
     {
         String where = "_id=? AND bookName=? AND authorName=? AND publisher=? AND type=? AND cost=? AND avatar=?";
         String[] selectionArgs = new String[]{String.valueOf(book.get_id()), book.getBookName(), book.getAuthorName(), book.getPublisher(), book.getType(), book.getCost(), book.getAvatar()};
-        context.getContentResolver().update(AppSetting.CONTENT_URI, book.getContentValues(), where, selectionArgs);
+        context.getContentResolver().update(AppSetting.CONTENT_URI_BOOK, book.getContentValues(), where, selectionArgs);
     }
 
     public void delete(Book book)
     {
         String where = "_id=?";
         String[] selectionArgs = new String[]{String.valueOf(book.get_id())};
-        context.getContentResolver().delete(AppSetting.CONTENT_URI, where, selectionArgs);
+        context.getContentResolver().delete(AppSetting.CONTENT_URI_BOOK, where, selectionArgs);
     }
 
     public void deleteAll()
     {
-        context.getContentResolver().delete(AppSetting.CONTENT_URI, null, null);
+        context.getContentResolver().delete(AppSetting.CONTENT_URI_BOOK, null, null);
     }
 
     public Cursor getCursor()
     {
-        return context.getContentResolver().query(AppSetting.CONTENT_URI, null, null, null, Book.ID);
+        return context.getContentResolver().query(AppSetting.CONTENT_URI_BOOK, null, null, null, Book.ID);
     }
 }

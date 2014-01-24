@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="5"
+            android:layout_margin="@dimen/small_margin_size">
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="BOOK ID"/>
+    <TextView android:id="@+id/set_reminder_tvBookId"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="THIS BOOK ID"/>
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="BOOK NAME"/>
+    <TextView android:id="@+id/set_reminder_tvBookName"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="THIS BOOK NAME"/>
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="REMIND DATE "/>
+    <TextView android:id="@+id/set_reminder_tvDateRemind"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="08-12-1991"/>
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="REMIND TIME "/>
+    <TextView android:id="@+id/set_reminder_tvTimeRemind"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="12:20"/>
+    <Button android:id="@+id/set_reminder_btSetRemind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SET REMIND"/>
+    <Button android:id="@+id/set_reminder_btCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CANCEL"/>
+</GridLayout>

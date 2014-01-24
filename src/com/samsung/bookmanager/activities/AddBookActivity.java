@@ -29,6 +29,7 @@ import java.util.Map;
 public class AddBookActivity extends Activity
 {
     private BookService bookService;
+    private String selectedImagePath;
 
     public void onCreate(Bundle savedInstanceState)
     {
@@ -51,7 +52,7 @@ public class AddBookActivity extends Activity
                 ((EditText) findViewById(R.id.new_book_etPublisher)).getText().toString(),
                 ((EditText) findViewById(R.id.new_book_etType)).getText().toString(),
                 ((EditText) findViewById(R.id.new_book_etCost)).getText().toString(),
-                "avatar_link");
+                selectedImagePath);
     }
 
     public void editBookAvatar(View view)
@@ -85,7 +86,7 @@ public class AddBookActivity extends Activity
             if (requestCode == AppSetting.PICK_FROM_FILE)
             {
                 Uri selectedImageUri = data.getData();
-                String selectedImagePath = getPath(selectedImageUri);
+                selectedImagePath = getPath(selectedImageUri);
                 photo = getPreview(selectedImagePath);
             }
             Map<String, Integer> targetSize = ImageUtils.getSizeImage(this, R.drawable.book_avatar_detail);
